@@ -69,6 +69,7 @@ export const theme = createTheme({
         grey: {
           500: '#757575',
           300: '#444444',
+          900: '#282a36',
         },
         error: {
           main: '#DA3737',

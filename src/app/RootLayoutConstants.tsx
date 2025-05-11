@@ -6,10 +6,10 @@ import DescriptionIcon from '@mui/icons-material/Description';
 export const NAVIGATION: Navigation = [
   {
     kind: 'header',
-    title: 'Main items',
+    title: 'Assuntos Principais',
   },
   {
-    title: 'Documentation',
+    title: 'Documentação',
     icon: <DashboardIcon />,
   },
   {
@@ -29,6 +29,24 @@ export const NAVIGATION: Navigation = [
       },
     ],
  },
+ {
+    title: 'Paginas',
+    segment: 'paginas',
+
+    icon: <DashboardIcon />,
+     children: [
+      {
+        segment: 'estrutura',
+        title: 'Estrutura',
+        icon: <DescriptionIcon />,
+      },
+      {
+        segment: 'tipografia',
+        title: 'Tipografia',
+        icon: <DescriptionIcon />,
+      },
+    ],
+  },
 ];
 
 export const BRANDING = {
