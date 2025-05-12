@@ -24,6 +24,7 @@ const CopyPaste = ({ content }: { content: string }) => {
                 borderRadius: 1,  
                 bgcolor: 'grey.900',
                 justifyContent: 'space-between',
+                width: '100%',
             }}>
                 <Box sx={{ bgcolor: 'grey.900', borderRadius: 1, padding: 1, flex: 1 }}>
                    <SyntaxHighlighter language="jsx" style={dracula}>
