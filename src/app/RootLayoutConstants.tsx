@@ -41,8 +41,13 @@ export const NAVIGATION: Navigation = [
         icon: <DescriptionIcon />,
       },
       {
-        segment: 'tipografia',
-        title: 'Tipografia',
+        segment: 'validation',
+        title: 'Validação',
+        icon: <DescriptionIcon />,
+      },
+       {
+        segment: 'padrao',
+        title: 'Padrão de Código',
         icon: <DescriptionIcon />,
       },
     ],
