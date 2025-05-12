@@ -114,5 +114,58 @@ class CategoryService {
     }
 }
 
-export const categoryService = new CategoryService();`
+export const categoryService = new CategoryService();`,
+importStandard: `
+//errado:
+import { Box } from '../../../components/Box';
+//correto:
+import { Box } from '@solar/solar-ui';`,
+requestStandard: `
+//PaginatedRequest
+
+export type PaginatedRequest = {
+    limit?: string;
+    offset?: string;
+}
+...
+
+//GetAllAssistedsRequest
+
+import { PaginatedRequest } from "../shared/PaginatedRequest";
+
+export type GetAllAssistedsRequest = PaginatedRequest & {
+    cpf?: string;
+    nome?: string;
+    filiacao?: string;
+}`,
+responseStandard: `
+//GetListSharedResponse
+
+export type GetListSharedResponse<T> = {
+    count: number
+    next: null
+    previous: null
+    results: T[]
+}
+...
+
+//GetAllAssistedsResponse
+
+import { GetListSharedResponse } from "../shared/GetListSharedResponse";
+
+export type GetAllAssistedsResponse = GetListSharedResponse<Assisted>;
+
+export type Assisted = {
+    id: number;
+    cpf: string;
+    nome: string;
+    nome_social: string | null;
+    apelido: string | null;
+    tipo: number;
+    data_nascimento: string;
+    filiacao: {
+        nome: string;
+    }[];
+}`
+
 }

@@ -2,7 +2,7 @@ import { Box, Divider, Typography } from '@mui/material';
 import * as React from 'react';
 import CopyToClipboard from '../../../components/CopyPaste';
 import { codeSnippets } from '../validation/codeSnippets';
-import FolderStructure from '../../../components/Folderstructure';
+
 export default function StructurePage() {
   return (
     <Box sx={{ padding: '16px' }}>
@@ -14,6 +14,10 @@ export default function StructurePage() {
         No Solar V2 a nomeclatura das funções e componentes é em inglês, camel case:
       </Typography>
         <CopyToClipboard content={codeSnippets.functionsStandard} />
+        <Typography variant="subtitle1" sx={{ marginBottom: '32px', marginTop: '40px' }}>
+        Os imports devem sempre ser feitos com @ e não com ../
+      </Typography>
+        <CopyToClipboard content={codeSnippets.importStandard} />
       <Typography variant="subtitle1" sx={{ marginBottom: '32px', marginTop: '40px' }}>
         Uso de <strong>ENUMS</strong> e não de textos:
       </Typography>

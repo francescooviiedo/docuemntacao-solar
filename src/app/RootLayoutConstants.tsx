@@ -52,6 +52,28 @@ export const NAVIGATION: Navigation = [
       },
     ],
   },
+  {
+    title: 'Services',
+    segment: 'services',
+    icon: <DashboardIcon />,
+    children: [
+      {
+        segment: 'format',
+        title: 'Estrutura da classe Service',
+        icon: <DescriptionIcon />,
+      },
+      {
+        segment: 'request',
+        title: 'Estrutura da requisição',
+        icon: <DescriptionIcon />,
+      },
+      {
+        segment: 'response',
+        title: 'Estrutura da resposta',
+        icon: <DescriptionIcon />,
+      },
+    ],
+  },
 ];
 
 export const BRANDING = {
