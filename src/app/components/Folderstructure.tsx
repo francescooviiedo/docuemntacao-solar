@@ -11,7 +11,7 @@ export default function FolderStructure() {
     const ListIcon = ({text, subText, padding = 4}:{ text:string, subText:string, padding?: number })  => {
         return (
             <List component="div" disablePadding>
-                <ListItemButton sx={{ pl: padding }}>
+                <ListItemButton sx={{ pl: padding, pt: 0 }}>
                     <ListItemIcon>
                         <FolderIcon />
                     </ListItemIcon>
@@ -21,8 +21,8 @@ export default function FolderStructure() {
         );
     };
 
-    const CollapseIcon = ({ children, text, subText = '',padding }: { children: React.ReactNode, text:string, subText?:string,padding: number }) => {
-        const [open, setOpen] = React.useState(true);
+    const CollapseIcon = ({ children, text, subText = '',padding, isOpen = false }: { children: React.ReactNode, text:string, subText?:string,padding: number, isOpen?: boolean }) => {
+        const [open, setOpen] = React.useState(isOpen);
 
         const handleClick = () => {
             setOpen(!open);
@@ -30,7 +30,7 @@ export default function FolderStructure() {
 
         return (
             <List>
-                <ListItemButton onClick={handleClick} sx={{ pl: padding }}>
+                <ListItemButton onClick={handleClick} sx={{ pl: padding, pt: 0 }}>
                     <ListItemIcon>
                         <FolderIcon />
                     </ListItemIcon>
@@ -46,7 +46,7 @@ export default function FolderStructure() {
 
     return (
         <List>
-            <CollapseIcon text='App' subText='' padding={0}>
+            <CollapseIcon text='App' subText='' padding={0} isOpen={true}>
                 <CollapseIcon text='(private)' padding={4}>
                 <ListIcon text='Pagina' subText='contém layout e page' padding={8}/>
             </CollapseIcon>
