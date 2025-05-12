@@ -10,7 +10,13 @@ export default function StructurePage() {
         <Typography variant="h4" sx={{ marginBottom: '1px', marginTop: '16px' }}>
           <strong>Estrutura de pastas:</strong>
         </Typography>
+        <Typography variant="subtitle1" sx={{ marginBottom: '1px', marginTop: '16px' }}>
+          A estrutura a seguir descreve como as pastas e os arquivos devem ser organizados dentro do projeto Solar V2:
+        </Typography>
+        <Divider sx={{ marginBottom: '32px', marginTop: '64px' }} />
         <FolderStructure />
+        <Divider sx={{ marginBottom: '32px', marginTop: '16px' }} />
+
       </Box>
     </Box>
   );
