@@ -22,10 +22,6 @@ export default function StructurePage() {
         Uso de <strong>ENUMS</strong> e não de textos:
       </Typography>
         <CopyToClipboard content={codeSnippets.enumStandard} />
-      <Typography variant="subtitle1" sx={{ marginBottom: '32px', marginTop: '40px' }}>
-        A camada de services é separada por contexto, ou seja, um arquivo para endpoint ( CRUD ) e não um arquivo por função:
-      </Typography>
-        <CopyToClipboard content={codeSnippets.serviceStandard} />
     </Box>
   );
 }

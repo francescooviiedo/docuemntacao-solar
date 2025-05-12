@@ -77,7 +77,6 @@ return httpClient.request<T>(url, {
 ...
 `,
 serviceStandard: `
-//correto:
 class CategoryService {
     private readonly baseUrl = '/categories';
     private readonly cacheTime: CacheTimeOption = '1day';
@@ -86,8 +85,8 @@ class CategoryService {
         return api.get<Array<GetCategoryResponse>>(this.baseUrl, {
             params,
             cache: {
-                tag: 'categories', // tag for revalidation
-                time: this.cacheTime, // time to revalidate the cache
+                tag: 'categories',
+                time: this.cacheTime,
             }
         });
     }
