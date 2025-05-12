@@ -22,9 +22,6 @@ const colors = [
 export default function ColorPage() {
   return (
     <Box sx={{ padding: '16px' }}>
-      <Typography variant="h4" gutterBottom>
-        Cores
-      </Typography>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
         {colors.map((color) => (
           <Box
