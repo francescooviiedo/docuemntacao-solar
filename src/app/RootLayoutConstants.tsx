@@ -42,7 +42,7 @@ export const NAVIGATION: Navigation = [
       },
       {
         segment: 'validation',
-        title: 'Validação',
+        title: 'Validação de Forms',
         icon: <DescriptionIcon />,
       },
        {

@@ -141,15 +141,16 @@ responseStandard: `
 //GetListSharedResponse
 
 export type GetListSharedResponse<T> = {
-    count: number
-    next: null
-    previous: null
-    results: T[]
+    count: number;
+    next: null;
+    previous: null;
+    results: T[];
 }
+
 ...
 
 //GetAllAssistedsResponse
-
+  
 import { GetListSharedResponse } from "../shared/GetListSharedResponse";
 
 export type GetAllAssistedsResponse = GetListSharedResponse<Assisted>;
