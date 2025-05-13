@@ -166,6 +166,24 @@ export type Assisted = {
     filiacao: {
         nome: string;
     }[];
-}`
+}`,
+buttonStandard: 
+`// standard
+
+<Button>
+  primário
+</Button>
+
+// cor secundária
+
+<Button color="secondary">
+  secundário
+</Button>
+
+//desabilitado
+
+<Button disabled>
+  desabilitado
+</Button>`
 
 }

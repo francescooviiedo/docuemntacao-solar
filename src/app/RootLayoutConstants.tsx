@@ -35,6 +35,11 @@ export const NAVIGATION: Navigation = [
 
     icon: <DashboardIcon />,
      children: [
+       {
+        segment: 'padrao',
+        title: 'Padrão de Código',
+        icon: <DescriptionIcon />,
+      },
       {
         segment: 'estrutura',
         title: 'Estrutura',
@@ -43,11 +48,6 @@ export const NAVIGATION: Navigation = [
       {
         segment: 'validation',
         title: 'Validação de Forms',
-        icon: <DescriptionIcon />,
-      },
-       {
-        segment: 'padrao',
-        title: 'Padrão de Código',
         icon: <DescriptionIcon />,
       },
     ],
@@ -74,6 +74,11 @@ export const NAVIGATION: Navigation = [
       },
     ],
   },
+  {
+    title: 'Componentes',
+    segment: 'componentes',
+    icon: <DashboardIcon />,
+  }
 ];
 
 export const BRANDING = {

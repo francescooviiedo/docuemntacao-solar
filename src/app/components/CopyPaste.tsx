@@ -5,13 +5,13 @@ import { Button, Tooltip, Box } from '@mui/material';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const CopyPaste = ({ content }: { content: string }) => {
+const CopyPaste = ({ content, type = 'javascript' }: { content: string, type?: string }) => {
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
         navigator.clipboard.writeText(content).then(() => {
             setCopied(true);
-            setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+            setTimeout(() => setCopied(false), 2000);
         });
     };
 
@@ -27,7 +27,7 @@ const CopyPaste = ({ content }: { content: string }) => {
                 width: '100%',
             }}>
                 <Box sx={{ bgcolor: 'grey.900', borderRadius: 1, padding: 1, flex: 1 }}>
-                   <SyntaxHighlighter language="javascript" style={dracula}>
+                   <SyntaxHighlighter language={type} style={dracula}>
                         {content}
                         </SyntaxHighlighter>
                 </Box>
