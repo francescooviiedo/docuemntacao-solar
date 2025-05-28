@@ -184,6 +184,50 @@ buttonStandard:
 
 <Button disabled>
   desabilitado
-</Button>`
+</Button>`,
+autocompleteStandard: `
+//lista:
 
+const options = [
+      { label: 'Belo Horizonte', id: 1 },
+      { label: 'Recife', id: 2 },
+    ];
+
+//componente:
+    <Autocomplete
+      disablePortal
+      options={options}
+      sx={{ width: 300 }}
+      renderInput={(params) => <TextField {...params} label="Exemplo" />}
+    />`,
+autocompleteListStandard: `
+const options = [
+   { label: 'Belo Horizonte', id: 1 },
+   { label: 'Recife', id: 2 },
+];
+// ou
+const options = ['Belo Horizonte', 'Recife'];
+`,
+booleanStandard: `//is: esta
+
+    isLoading={pending}
+
+//has: tem
+
+    const hasToken = !!request.cookies.get('token');
+
+//should: deveria
+
+    const shouldGoBack = formData.get('go_back') === 'true';
+        
+        if (shouldGoBack) {
+            return {
+                data,
+                step: previousState.step - 1,
+            };
+        }
+
+//can: pode
+
+    if(response) canClose`
 }
