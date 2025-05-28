@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from '@mui/material';
 import * as React from 'react';
 import CopyToClipboard from '../../../components/CopyPaste';
-import { codeSnippets } from '../validation/codeSnippets';
+import { codeSnippets } from '../../utils/codeSnippets';
 import FolderStructure from '../../../components/Folderstructure';
 export default function StructurePage() {
   return (
