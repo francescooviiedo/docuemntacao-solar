@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import * as React from 'react';
 import CopyToClipboard from '../../../components/CopyPaste';
-import { codeSnippets } from './codeSnippets';
+import { codeSnippets } from '../../utils/codeSnippets';
 export default function StructurePage() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', padding: '16px' }}>

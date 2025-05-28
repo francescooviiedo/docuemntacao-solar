@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import * as React from 'react';
 import CopyToClipboard from '../../../components/CopyPaste';
-import { codeSnippets } from '../../paginas/validation/codeSnippets';
+import { codeSnippets } from '../../utils/codeSnippets';
 export default function ServiceFormatPage() {
   return (
     <Box sx={{ padding: '16px' }}>
