@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from '@mui/material';
 import * as React from 'react';
 import CopyToClipboard from '../../../components/CopyPaste';
-import { codeSnippets } from '../validation/codeSnippets';
+import { codeSnippets } from '../../utils/codeSnippets';
 
 export default function StructurePage() {
   return (
@@ -22,6 +22,10 @@ export default function StructurePage() {
         Uso de <strong>ENUMS</strong> e não de textos:
       </Typography>
         <CopyToClipboard content={codeSnippets.enumStandard} />
+        <Typography variant="subtitle1" sx={{ marginBottom: '32px', marginTop: '40px' }}>
+        Uso de <strong>BOOLEANS</strong>:
+      </Typography>
+        <CopyToClipboard content={codeSnippets.booleanStandard} />
     </Box>
   );
 }
