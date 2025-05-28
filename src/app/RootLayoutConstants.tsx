@@ -50,6 +50,11 @@ export const NAVIGATION: Navigation = [
         title: 'Validação de Forms',
         icon: <DescriptionIcon />,
       },
+      {
+        segment: 'exemplo',
+        title: 'Exemplo de Estrutura',
+        icon: <DescriptionIcon />,
+      },
     ],
   },
   {
