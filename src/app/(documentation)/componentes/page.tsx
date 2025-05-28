@@ -1,10 +1,15 @@
-import { Box, Button, OutlinedInput, Typography } from '@mui/material';
+'use client';
+import { Autocomplete, Box, Button, OutlinedInput, TextField, Typography } from '@mui/material';
 import * as React from 'react';
 import CopyPaste from '../../components/CopyPaste';
-import { codeSnippets } from '../paginas/validation/codeSnippets';
+import { codeSnippets } from '../utils/codeSnippets';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 export default function ComponentsPage() {
+  const options = [
+  { label: 'Belo Horizonte', id: 1 },
+  { label: 'Recife', id: 2 },
+];
   return (
     <Box sx={{ padding: '16px' }}>
        <Typography variant="subtitle1" sx={{ marginBottom: '32px', marginTop: '40px' }}>
@@ -61,6 +66,23 @@ export default function ComponentsPage() {
           </Button>
           </Box>
       <CopyPaste type='jsx' content={codeSnippets.buttonStandard} />
+      <Typography variant="subtitle1" sx={{ marginBottom: '16px', marginTop: '40px', fontWeight: 'bold' }}>      
+          Select com busca:
+      </Typography>
+       <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, marginBottom: '16px' }}>
+           <Autocomplete
+              disablePortal
+              options={options}
+              sx={{ width: 300 }}
+              renderInput={(params) => <TextField {...params} label="Exemplo" />}
+    />
+          </Box>
+      <CopyPaste type='jsx' content={codeSnippets.autocompleteStandard} />
+      <Typography variant="subtitle1" sx={{ marginBottom: '16px', marginTop: '40px', fontWeight: 'bold' }}>      
+          O componente Autocomplete entende a lista nos seguintes formatos:
+      </Typography>
+            <CopyPaste type='jsx' content={codeSnippets.autocompleteListStandard} />
+
           </Box>
      
   );
