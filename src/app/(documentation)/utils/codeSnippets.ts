@@ -229,5 +229,83 @@ booleanStandard: `//is: esta
 
 //can: pode
 
-    if(response) canClose`
+    if(response) canClose`,
+    datePickerStandard: `
+    //date picker padrão
+
+    import dayjs, { Dayjs }  from 'dayjs';
+    import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+    import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+    import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+    import 'dayjs/locale/pt-br';
+
+      const [initialDate, setInitialDate] = React.useState<Dayjs | null>(null);
+
+          <LocalizationProvider 
+            dateAdapter={AdapterDayjs}  
+            adapterLocale={'pt-br'} //formato da data
+          >
+          <DatePicker
+              value={initialDate}
+              onChange={setInitialDate}
+              disablePast //define se as datas anteriores a hoje serão desabilitadas
+              shouldDisableDate // recebe uma função para desabilitar datas específicas
+              label="Data inicial"
+            />
+    `,
+    datePickerDependent: `
+     //Date Picker dependentes
+
+     //data inicial
+
+    <DatePicker
+      label="Data inicial"
+      value={initialDate}
+      onChange={setInitialDate}
+    />
+    
+    //data final
+
+    <DatePicker
+      label="Data final"
+      value={finalDate}
+      onChange={setFinalDate}
+      disabled={initialDate === null}
+      minDate={initialDate.add(1, 'day')}
+
+    />
+    `,
+    datePickerDisableDates: `
+     //Date Picker com datas desabilitadas
+    import dayjs, { Dayjs } from 'dayjs';onst disabledDates = [
+      '2025-06-01',
+      '2025-06-03',
+      '2025-06-05',
+      '2025-06-07',
+      '2025-06-10',
+      '2025-06-12',
+      '2025-06-15',
+      '2025-06-18',
+      '2025-06-22',
+      '2025-06-25',
+    ].map(date => dayjs(date));
+    
+    const isWeekend = (date: Dayjs) => {
+      const day = date.day();
+      return (
+        day === 0 ||
+        day === 6 ||
+        disabledDates.some(disabledDate => date.isSame(disabledDate, 'day'))
+      );
+    };
+
+     //data inicial
+
+      <DatePicker
+        value={initialDate}
+        onChange={setInitialDate}
+        shouldDisableDate={isWeekend}
+        label="Data inicial"
+      />
+    `
 }
