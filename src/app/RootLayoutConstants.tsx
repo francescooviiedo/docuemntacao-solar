@@ -12,6 +12,11 @@ export const NAVIGATION: Navigation = [
     title: 'Documentação',
     icon: <DashboardIcon />,
   },
+   {
+    title: 'React Form Hook',
+    segment: 'reactForm',
+    icon: <DashboardIcon />,
+  },
   {
    segment: 'designSystem',
    title: 'Design System',
